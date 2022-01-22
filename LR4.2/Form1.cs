@@ -12,54 +12,69 @@ namespace LR4._2
 {
     public partial class Form1 : Form
     {
+        Model model;
+
         public Form1()
         {
             InitializeComponent();
+            model = new Model();
+            
         }
 
-        private void textBoxA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void numericUpDownA_ValueChanged(object sender, EventArgs e)
         {
-
+            model.setValue_A(Decimal.ToInt32(numericUpDownA.Value));
         }
 
         private void trackBarA_Scroll(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBoxB_TextChanged(object sender, EventArgs e)
-        {
-
+            model.setValue_A(trackBarA.Value);
         }
 
         private void numericUpDownB_ValueChanged(object sender, EventArgs e)
         {
-
+            model.setValue_B(Decimal.ToInt32(numericUpDownB.Value));
         }
 
         private void trackBarB_Scroll(object sender, EventArgs e)
         {
-
+            model.setValue_B(trackBarB.Value);
         }
-
-        private void textBoxC_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+         
 
         private void numericUpDownC_ValueChanged(object sender, EventArgs e)
         {
-
+            model.setValue_C(Decimal.ToInt32(numericUpDownC.Value));
         }
 
         private void trackBarC_Scroll(object sender, EventArgs e)
         {
+            model.setValue_C(trackBarC.Value);
+        }
 
+        private void textBoxA_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                model.setValue_A(Int32.Parse(textBoxA.Text));
+            }
+        }
+
+        private void textBoxB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                model.setValue_B(Int32.Parse(textBoxB.Text));
+            }
+        }
+
+        private void textBoxC_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                model.setValue_C(Int32.Parse(textBoxC.Text));
+            }
         }
     }
 

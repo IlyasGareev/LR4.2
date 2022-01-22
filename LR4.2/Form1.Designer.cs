@@ -63,7 +63,7 @@ namespace LR4._2
             this.textBoxA.Name = "textBoxA";
             this.textBoxA.Size = new System.Drawing.Size(120, 20);
             this.textBoxA.TabIndex = 1;
-            this.textBoxA.TextChanged += new System.EventHandler(this.textBoxA_TextChanged);
+            this.textBoxA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxA_KeyDown);
             // 
             // numericUpDownA
             // 
@@ -103,7 +103,7 @@ namespace LR4._2
             this.textBoxB.Name = "textBoxB";
             this.textBoxB.Size = new System.Drawing.Size(120, 20);
             this.textBoxB.TabIndex = 4;
-            this.textBoxB.TextChanged += new System.EventHandler(this.textBoxB_TextChanged);
+            this.textBoxB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxB_KeyDown);
             // 
             // trackBarC
             // 
@@ -127,7 +127,7 @@ namespace LR4._2
             this.textBoxC.Name = "textBoxC";
             this.textBoxC.Size = new System.Drawing.Size(120, 20);
             this.textBoxC.TabIndex = 7;
-            this.textBoxC.TextChanged += new System.EventHandler(this.textBoxC_TextChanged);
+            this.textBoxC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxC_KeyDown);
             // 
             // Form1
             // 
