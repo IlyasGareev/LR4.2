@@ -76,6 +76,7 @@ namespace LR4._2
             // trackBarA
             // 
             this.trackBarA.Location = new System.Drawing.Point(82, 321);
+            this.trackBarA.Maximum = 100;
             this.trackBarA.Name = "trackBarA";
             this.trackBarA.Size = new System.Drawing.Size(124, 45);
             this.trackBarA.TabIndex = 3;
@@ -84,6 +85,7 @@ namespace LR4._2
             // trackBarB
             // 
             this.trackBarB.Location = new System.Drawing.Point(369, 321);
+            this.trackBarB.Maximum = 100;
             this.trackBarB.Name = "trackBarB";
             this.trackBarB.Size = new System.Drawing.Size(124, 45);
             this.trackBarB.TabIndex = 6;
@@ -108,6 +110,7 @@ namespace LR4._2
             // trackBarC
             // 
             this.trackBarC.Location = new System.Drawing.Point(654, 321);
+            this.trackBarC.Maximum = 100;
             this.trackBarC.Name = "trackBarC";
             this.trackBarC.Size = new System.Drawing.Size(124, 45);
             this.trackBarC.TabIndex = 9;
@@ -146,6 +149,8 @@ namespace LR4._2
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarB)).EndInit();

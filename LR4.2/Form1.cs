@@ -18,7 +18,7 @@ namespace LR4._2
         {
             InitializeComponent();
             model = new Model();
-            
+            model.observers += new System.EventHandler(this.UpdateFromModel); //обновление 
         }
 
         
@@ -75,6 +75,44 @@ namespace LR4._2
             {
                 model.setValue_C(Int32.Parse(textBoxC.Text));
             }
+        }
+
+        private void UpdateFromModel(object sender, EventArgs e)    // обновление 
+        {
+            textBoxA.Text = model.getValue_A().ToString();
+            numericUpDownA.Value = model.getValue_A();
+            trackBarA.Value = model.getValue_A();
+
+            textBoxB.Text = model.getValue_B().ToString();
+            numericUpDownB.Value = model.getValue_B();
+            trackBarB.Value = model.getValue_B();
+
+            textBoxC.Text = model.getValue_C().ToString();
+            numericUpDownC.Value = model.getValue_C();
+            trackBarC.Value = model.getValue_C();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) // сохраняю значения перед закрытием формы
+        {
+            Properties.Settings.Default.value_A = model.getValue_A();
+            Properties.Settings.Default.value_B = model.getValue_B();
+            Properties.Settings.Default.value_C = model.getValue_C();
+            Properties.Settings.Default.Save();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            textBoxC.Text = Properties.Settings.Default.value_C.ToString();
+            numericUpDownC.Value = Properties.Settings.Default.value_C;
+            trackBarC.Value = Properties.Settings.Default.value_C;
+
+            textBoxB.Text = Properties.Settings.Default.value_B.ToString();
+            numericUpDownB.Value = Properties.Settings.Default.value_B;
+            trackBarB.Value = Properties.Settings.Default.value_B;
+
+            textBoxA.Text = Properties.Settings.Default.value_A.ToString();
+            numericUpDownA.Value = Properties.Settings.Default.value_A;
+            trackBarA.Value = Properties.Settings.Default.value_A;
         }
     }
 
